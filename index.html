@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0ebf8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 770px;
+        }
+        .form-header {
+            background-color: #ffffff;
+            border-top: 10px solid #673ab7;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+        .form-title { font-size: 30px; margin: 0; color: #202124; }
+        .branding { color: #0d47a1; font-weight: bold; font-size: 14px; margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px; }
+        
+        .question-card {
+            background-color: #ffffff;
+            border: 1px solid #dadce0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 15px;
+        }
+        .question-text { font-size: 16px; font-weight: 500; margin-bottom: 15px; }
+        .option { display: flex; align-items: center; padding: 10px 0; cursor: pointer; color: #3c4043; }
+        .radio { height: 18px; width: 18px; border: 2px solid #70757a; border-radius: 50%; margin-right: 12px; }
+        
+        /* Interactive Buttons */
+        .btn-group { display: flex; gap: 10px; margin-top: 15px; }
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .hint-btn { background-color: #fff; color: #1a73e8; border: 1px solid #dadce0; }
+        .hint-btn:hover { background-color: #f1f3f4; }
+        .ans-btn { background-color: #1a73e8; color: white; }
+        .ans-btn:hover { background-color: #1557b0; }
+
+        /* Hidden Sections */
+        .hint-box { display: none; margin-top: 10px; padding: 10px; background-color: #fffde7; border-left: 4px solid #fbc02d; font-size: 13px; color: #555; }
+        .explanation-box { display: none; margin-top: 10px; padding: 15px; background-color: #e6f4ea; border-radius: 4px; border: 1px solid #ceead6; }
+        .correct-ans { color: #137333; font-weight: bold; margin-bottom: 5px; }
+        .exp-text { font-size: 13px; color: #3c4043; line-height: 1.5; }
+    </style>
+    <script>
+        function toggle(id) {
+            var x = document.getElementById(id);
+            if (x.style.display === "none" || x.style.display === "") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="form-container">
+    <div class="form-header">
+        <div class="form-title">कोशिका विज्ञान: Interactive Set</div>
+        <div class="branding">By Suraj Kaushik (MCQ Master) | SCSA - Indian Overseas Bank</div>
+    </div>
+
+    <div class="question-card">
+        <div class="question-text">1. 'प्रोटोप्लाज्म' (Protoplasm) को 'जीवन का भौतिक आधार' किसने कहा था?</div>
+        <div class="option"><div class="radio"></div> (A) परकिन्जे</div>
+        <div class="option"><div class="radio"></div> (B) हक्सले</div>
+        <div class="option"><div class="radio"></div> (C) डूजार्डिन</div>
+        <div class="option"><div class="radio"></div> (D) रॉबर्ट ब्राउन</div>
+        
+        <div class="btn-group">
+            <button class="hint-btn" onclick="toggle('hint1')">💡 Hint</button>
+            <button class="ans-btn" onclick="toggle('ans1')">Check Answer</button>
+        </div>
+
+        <div id="hint1" class="hint-box">संकेत: उस वैज्ञानिक का नाम 'H' से शुरू होता है।</div>
+        
+        <div id="ans1" class="explanation-box">
+            <div class="correct-ans">सही उत्तर: (B) हक्सले</div>
+            <div class="exp-text"><strong>व्याख्या:</strong> हक्सले (Huxley) ने ही प्रोटोप्लाज्म को 'Physical Basis of Life' माना था, जबकि परकिन्जे ने इसे केवल नाम दिया था।</div>
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="question-text">2. 'कोशिका की परासंरचना' (Ultrastructure) का अध्ययन कब और किसके द्वारा किया गया?</div>
+        <div class="option"><div class="radio"></div> (A) रॉबर्ट ब्राउन (1831)</div>
+        <div class="option"><div class="radio"></div> (B) ग्रीव (1682)</div>
+        <div class="option"><div class="radio"></div> (C) क्लाउड एवं पैलेड (1974)</div>
+        <div class="option"><div class="radio"></div> (D) ड्यूटोचेट (1824)</div>
+        
+        <div class="btn-group">
+            <button class="hint-btn" onclick="toggle('hint2')">💡 Hint</button>
+            <button class="ans-btn" onclick="toggle('ans2')">Check Answer</button>
+        </div>
+
+        <div id="hint2" class="hint-box">संकेत: यह अध्ययन इलेक्ट्रॉन सूक्ष्मदर्शी के आविष्कार के बाद संभव हुआ था।</div>
+        
+        <div id="ans2" class="explanation-box">
+            <div class="correct-ans">सही उत्तर: (C) क्लाउड एवं पैलेड (1974)</div>
+            <div class="exp-text"><strong>व्याख्या:</strong> 1974 में क्लाउड और पैलेड ने इलेक्ट्रॉन सूक्ष्मदर्शी की मदद से कोशिका की सूक्ष्म संरचनाओं का अध्ययन किया और नोबेल पुरस्कार जीता।</div>
+        </div>
+    </div>
+
+    <div class="question-card">
+        <div class="question-text">3. किस वर्ष में नॉल एवं रस्का ने इलेक्ट्रॉन सूक्ष्मदर्शी का आविष्कार किया था?</div>
+        <div class="option"><div class="radio"></div> (A) 1835</div>
+        <div class="option"><div class="radio"></div> (B) 1932</div>
+        <div class="option"><div class="radio"></div> (C) 1824</div>
+        <div class="option"><div class="radio"></div> (D) 1974</div>
+        
+        <div class="btn-group">
+            <button class="hint-btn" onclick="toggle('hint3')">💡 Hint</button>
+            <button class="ans-btn" onclick="toggle('ans3')">Check Answer</button>
+        </div>
+
+        <div id="hint3" class="hint-box">संकेत: यह तारीख 20वीं सदी के पूर्वार्ध (First half) की है।</div>
+        
+        <div id="ans3" class="explanation-box">
+            <div class="correct-ans">सही उत्तर: (B) 1932</div>
+            <div class="exp-text"><strong>व्याख्या:</strong> सन् 1932 में नॉल एवं रस्का द्वारा इलेक्ट्रॉन सूक्ष्मदर्शी के आविष्कार के बाद कोशिका विज्ञान के अध्ययन में क्रांति आई।</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
